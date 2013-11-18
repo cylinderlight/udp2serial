@@ -35,7 +35,8 @@ the Processing examples sends a message to the Yun and receives it back (press i
 ////////////////////////////////////////////////////////////////////////
 
 
-License
+License:
+
 Written by Marco Brianza. Copyright (c) 2013
 
 Permission to use, copy, modify, distribute, and distribute modified versions
