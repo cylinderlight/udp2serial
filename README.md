@@ -25,6 +25,10 @@ for example: scp udp2serial.py root@arduino.local:/usr/bin
 to run the program interactively from an ssh console type python /usr/bin/udp2serial.py
 this is recomended since the code is not heavily tested and the program may stop
 
+an initscrip is provided  in /system/etc/init.d/udp2serial 
+copy it to the linino corresponding folder for automatc startup
+this script also resets the arduino microcontoller for clean buffers status
+
 the UDP ports are coded as constants, defaults are: receive on port 10000, send on port 11000
 
 
