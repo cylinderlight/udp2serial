@@ -40,6 +40,10 @@ this script also resets the arduino microcontoller for clean buffers status beca
 
 The UDP ports are coded as constants, defaults are: receive on port 10000, send on port 11000
 
+If you are using OSC and want to publish this sevice with multicast DNS you can copy the on the YUN the file
+/system/etc/avahi/services/OSC.service
+the UDP port hard coded in this file is 10000 
+
 
 Examples:
 the included example for Arduino OSC_Echo_SLIP receives an osc message and echoes it back to the sender

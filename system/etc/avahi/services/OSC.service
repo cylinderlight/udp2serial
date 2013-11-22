@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone='no'?>
+<!DOCTYPE service-group SYSTEM "avahi-service.dtd">
+<service-group>
+	 <name replace-wildcards="yes">OSC service (udp2serial) on %h</name>
+	   <service>
+	   		<type>_osc._udp</type>
+			<port>10000</port>		
+	   </service>
+</service-group>
