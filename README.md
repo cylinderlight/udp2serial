@@ -20,7 +20,7 @@ for proper functioning the console must be disabled editing /etc/inittab
 commenting this line 
  #ttyATH0::askfirst:/bin/ash --login
 
-to avoid as much as possible the kernel messages set a log level filter to very low:
+to avoid as much as possible the kernel messages set the log level filter to very low,
 this can be done on the luci interface under the menu:
  system/system | Logging - Log output level = Emergency
 
@@ -35,7 +35,7 @@ to run the program interactively from an ssh console type: python /usr/bin/udp2s
 this is recomended since the code is not heavily tested and the program may stop
 
 an initscrip is provided  in /system/etc/init.d/udp2serial 
-copy it to the linino corresponding folder for automatc startup
+copy it to the linino corresponding folder for automatc startup, you may need to enable it to execute: (chmod +x udp2serial) 
 this script also resets the arduino microcontoller for clean buffers status because they are filled by data from the bootloader and linux boot kernel messages.
 
 The UDP ports are coded as constants, defaults are: receive on port 10000, send on port 11000
