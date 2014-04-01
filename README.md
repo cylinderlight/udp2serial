@@ -1,12 +1,12 @@
 udp2serial
 ==========
 
-a bridge between udp packets and a tty serial port, framing the udp packet data on the serial line with slip. 
+A bridge between udp packets a/nd a tty serial port, framing the udp packet data on the serial line with slip. 
 Developed to use the OSC protocol on the Arduino Yun
 
-version 1.0  11/18/2013
+version 1.1  04/01/2014
 
-on Arduino (1.5.4) it has been tested with the OSC library: https://github.com/CNMAT/OSC
+on Arduino (1.5.6-r2) it has been tested with the OSC library: https://github.com/CNMAT/OSC
 on Processing (2.1) with the OSC library: http://www.sojamo.de/libraries/oscP5/
 
 the included slip.py is copyright of Roman Haeflei https://github.com/reduzent/pyslip
@@ -15,16 +15,18 @@ The OSC packets sent from the Arduino go forwared to the last peer that sent a p
 
 Setup procedure:
 
-on linino the serial port is attached the the console and the kernel messages are also sent to the serial
-for proper functioning the console must be disabled editing /etc/inittab  
+on linino the serial port is attached the the console and the kernel messages are also sent to the serial.
+For proper functioning the console must be disabled editing 
+/etc/inittab  
 commenting this line 
  #ttyATH0::askfirst:/bin/ash --login
+ effect of this requires a reboot
 
-to avoid as much as possible the kernel messages set the log level filter to very low,
-this can be done on the luci interface under the menu:
- system/system | Logging - Log output level = Emergency
 
-and rebooting
+The startup script of version 1.1 takes care to mute the kernal messages executing 
+echo 0 > /proc/sys/kernel/printk
+before lounching the service
+
 
 copy udp2serial.py and slip.py in /usr/bin of the Yun
 for example using scp: 
@@ -32,7 +34,6 @@ scp udp2serial.py root@arduino.local:/usr/bin
 scp sli.py root@arduino.local:/usr/bin
 
 to run the program interactively from an ssh console type: python /usr/bin/udp2serial.py
-this is recomended since the code is not heavily tested and the program may stop
 
 an initscrip is provided  in /system/etc/init.d/udp2serial 
 copy it to the linino corresponding folder for automatc startup, you may need to enable it to execute: (chmod +x udp2serial) 

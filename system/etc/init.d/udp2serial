@@ -5,6 +5,7 @@ STOP=99
 
 start() {
         if [ ! -e /var/run/udp2serial.pid ]; then
+		echo 0 > /proc/sys/kernel/printk
                 cd /usr/bin
                 reset-mcu
                 python udp2serial.py 2> /dev/null &
