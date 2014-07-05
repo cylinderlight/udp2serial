@@ -1,23 +1,21 @@
 udp2serial
-===
+==
 
 A bridge between UDP packets and a tty serial port, framing the udp packet data on the serial line with slip. 
 Developed to use the OSC protocol on the Arduino Yun
 
-version 2.0  2014/07/05
+version 2.0     2014/07/05
 
-Tested on:
-	OpenWrt-Yun 1.1
-With:
-	Arduino IDE 1.5.6-r2
-	OSC library: https://github.com/CNMAT/OSC
+Tested on: OpenWrt-Yun 1.1
+With: Arduino IDE 1.5.6-r2
+OSC library: https://github.com/CNMAT/OSC
 Examples for:
-	Processing (2.2.1) with the OSC library: http://www.sojamo.de/libraries/oscP5/
-	TouchOSC 1.9.1http://hexler.net/software/touchosc (available for purchase for both IOS and Android)
+Processing (2.2.1) with the OSC library: http://www.sojamo.de/libraries/oscP5/
+TouchOSC 1.9.1http://hexler.net/software/touchosc (available for purchase for both IOS and Android)
 	
 
 Setup procedure:
-===
+==
 
 Connect to the same network of your Yun and execute from you workstation  >setup_push_udp2serial.sh arduino.local
 This script copies the requred files to the Yun using scp. You need to authenitate several times witing you arduino password.
@@ -27,7 +25,7 @@ The UDP ports are constants in udp2serial.py, defaults are: receive on port 1000
 The OSC packets sent from the Arduino go forwared to the last peer that sent a packet to the Yun.
 
 Insights:
-===
+==
 on opewnWRT the serial port is attached the the console and the kernel messages are also sent to the serial.
 For proper functioning the console must be disabled editing 
 /etc/inittab  
