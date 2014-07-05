@@ -7,11 +7,16 @@ Developed to use the OSC protocol on the Arduino Yun
 version 2.0     2014/07/05
 
 Tested on: OpenWrt-Yun 1.1
+
 With: Arduino IDE 1.5.6-r2
+
 OSC library: https://github.com/CNMAT/OSC
+
 Examples for:
 Processing (2.2.1) with the OSC library: http://www.sojamo.de/libraries/oscP5/
+
 TouchOSC 1.9.1http://hexler.net/software/touchosc (available for purchase for both IOS and Android)
+
 	
 
 Setup procedure:
